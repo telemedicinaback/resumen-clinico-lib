@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 @Data
 @NoArgsConstructor
@@ -41,12 +43,7 @@ public class ResumenClinicoView implements Serializable {
 
     //prestador de servicios de salud
     private String nombreInstitucion;
-    private String tipoVialidad;
-    private String nombreVialidad;
-    private String numeroExterior;
-    private String numeroInterior;
-    private String tipoAsentamiento;
-    private String nombreAsentamiento;
+    private String domicilio;
     private String valorLocalidad;
     private String valorMunicipio;
     private String valorEntidad;
@@ -111,6 +108,7 @@ public class ResumenClinicoView implements Serializable {
     private String fechaInicioAlcohol;
     private String fechaFinAlcohol;
     private String consumoAlcohol;
+    private String nombreSustancia;
     private String fechaInicioSustancias;
     private String fechaFinSustancias;
     private String consumoSustancias;
@@ -182,6 +180,7 @@ public class ResumenClinicoView implements Serializable {
     //
 
     //Estudios de laboratorio
+    private ArrayList<Object> resultado;
     private String idPruebas;
     private String nombrePrueba;
     private String fechaResultado;
@@ -227,12 +226,7 @@ public class ResumenClinicoView implements Serializable {
 
         //prestador de servicios de salud
         ", nombreInstitucion='"+nombreInstitucion+'\''+
-        ", tipoVialidad='"+tipoVialidad+'\''+
-        ", nombreVialidad='"+nombreVialidad+'\''+
-        ", numeroExterior='"+numeroExterior+'\''+
-        ", numeroInterior='"+numeroInterior+'\''+
-        ", tipoAsentamiento='"+tipoAsentamiento+'\''+
-        ", nombreAsentamiento='"+nombreAsentamiento+'\''+
+        ", domicilio='"+domicilio+'\''+
         ", valorLocalidad='"+valorLocalidad+'\''+
         ", valorMunicipio='"+valorMunicipio+'\''+
         ", valorEntidad='"+valorEntidad+'\''+
@@ -373,6 +367,7 @@ public class ResumenClinicoView implements Serializable {
         ", fechaResultado='"+fechaResultado+'\''+
         ", resultadoLab='"+resultadoLab+'\''+
         ", rangoResultado='"+rangoResultado+'\''+
+                ", resultado='"+resultado+'\''+
         //
 
         //Plan de tratamiento y recomendaciones terapéuticas
